@@ -19,5 +19,5 @@
 <li>Add checkboxes to allow selection of multiple recipes.</li>
 <li>Show an alphabetically ordered list of distinct ingredients for the selected recipes. This should update as recipes are selected / unselected.</li>
 <li>Persist the selections locally and regenerate the view on page refresh.</li>
-<li>In a README note any required setup to be able to run the app, such as modifying hosts file, etc.</li>
+<li>In a README note any required setup to be able to run the app, such as modifying hosts file, npm install, etc.</li>
 </ul>
