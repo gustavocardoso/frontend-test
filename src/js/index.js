@@ -1,22 +1,6 @@
-;(() => {
-  function App () {
-    this.recipes = []
-  }
+import App from './app'
 
-  App.prototype = {
-    init: async function () {
-      console.log('App init')
-      this.recipes = await this.getRecipes()
-      console.log(this.recipes)
-    },
-
-    getRecipes: async function () {
-      const response = await fetch('/public/assets/json/recipes.json')
-      const recipes = await response.json()
-
-      return recipes
-    }
-  }
-
-  const app = new App().init()
-})()
+document.addEventListener('DOMContentLoaded', () => {
+  const app = new App()
+  app.init()
+})
