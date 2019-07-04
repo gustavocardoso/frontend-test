@@ -98,6 +98,12 @@ ul {
     }
   }
 
+  .how-to {
+    font-size: 0.9rem;
+    margin: ($default-margin * 1.5);
+    margin-bottom: 0;
+  }
+
   .ingredients-list {
     list-style-type: square;
     list-style-position: inside;
