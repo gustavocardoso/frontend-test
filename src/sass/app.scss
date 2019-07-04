@@ -1,0 +1,236 @@
+@charset "utf-8";
+
+@import './config';
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: transparent;
+  text-shadow: none;
+}
+
+body {
+  height: 100%;
+  font: normal normal normal 16px/1.4 $font-family-base;
+  color: $color-body-default;
+  background-image: $background-body-default;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:before {
+    display: none;
+    content: 'mobile';
+  }
+}
+
+h1,
+h2 {
+  font-family: $font-family-special;
+}
+
+ul {
+  list-style: none;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  background: $background-header;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  padding: $default-padding;
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $color-page-title;
+    letter-spacing: -1px;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .icon-header {
+    font-size: 2rem;
+    color: #fd8619;
+    margin-right: ($default-margin / 2);
+  }
+}
+
+.content {
+  display: flex;
+}
+
+.ingredients {
+  width: 55%;
+  background: $background-ingredients;
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    background: $background-section-title;
+    padding: ($default-padding / 2) $default-padding;
+
+    .icon-header-ingredients {
+      color: $color-ingredient-icon;
+      margin-right: ($default-margin / 2);
+    }
+
+    .section-title {
+      color: $color-ingredient-header;
+    }
+
+    .ingredients-counter {
+      display: inline-block;
+      color: $color-ingredient-header;
+      margin-left: ($default-margin / 2);
+    }
+  }
+
+  .ingredients-list {
+    list-style-type: square;
+    list-style-position: inside;
+    padding: $default-padding;
+
+    .ingredient {
+      font-size: 1rem;
+      padding: ($default-padding / 2);
+      border-bottom: 1px solid $border-color-ingredient-list;
+
+      &:hover {
+        color: $color-ingredient-hover;
+        background: $background-ingredient-hover;
+      }
+    }
+  }
+}
+
+.recipes {
+  width: 45%;
+}
+
+.recipes-list {
+  .item {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border-bottom: 1px solid $border-color-list-item;
+    padding: $default-padding;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-list-hover;
+      background: $background-list-hover;
+    }
+
+    &[data-selected='true'] {
+      color: $color-list-selected;
+      background: $background-list-selected;
+      border-bottom: 1px solid $border-color-list-selected;
+
+      &:before {
+        background: $mantis;
+        border: 0;
+      }
+    }
+
+    &:before {
+      display: block;
+      width: 3px;
+      height: 60px;
+      content: '';
+      background: #ccc;
+      margin-right: $default-margin;
+    }
+
+    .item-container {
+      width: 85%;
+    }
+
+    .item-title {
+      font-size: 1rem;
+    }
+
+    .item-meta {
+      font-size: 0.8rem;
+
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+.app-footer {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: $color-footer;
+  background: $background-footer;
+  padding: $default-padding;
+
+  a {
+    color: $color-link-footer;
+  }
+
+  .icon-footer {
+    font-size: 2rem;
+    margin-right: ($default-margin / 2);
+  }
+}
+
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 1;
+
+//   .main-loading {
+//     font-size: 0.9em;
+//     font-weight: 900;
+//     letter-spacing: 1px;
+//     color: #333;
+//     animation: blink 0.4s ease infinite alternate;
+//   }
+// }
+
+// .footer {
+//   @extend %basic-footer;
+//   color: $footer-text-color;
+//   padding: 0.6em 0.4em;
+//   background: #111;
+//   width: 100%;
+
+//   a {
+//     font-weight: 700;
+//     color: $footer-link-color;
+//   }
+// }
+
+// @media (min-width: $media-desktop) {
+//   body:before {
+//     display: none;
+//     content: 'desktop';
+//   }
+
+//   .container {
+//     .main-loading {
+//       font-size: 1.4em;
+//     }
+//   }
+// }

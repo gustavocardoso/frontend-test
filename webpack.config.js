@@ -4,8 +4,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-// const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
-// const WebpackPwaManifest = require('webpack-pwa-manifest')
 
 require('babel-polyfill')
 

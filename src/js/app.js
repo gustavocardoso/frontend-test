@@ -1,4 +1,5 @@
 import Recipes from './recipes'
+import '../sass/app.scss'
 class App {
   constructor () {
     this.recipes = []
@@ -6,6 +7,7 @@ class App {
     this.ingredients = []
     this.ingredientsListContainer = document.querySelector('.ingredients')
     this.recipesListContainer = document.querySelector('.recipes')
+    this.ingredientsCounter = document.querySelector('.ingredients-counter')
   }
 
   async init () {
@@ -21,15 +23,25 @@ class App {
       let item = document.createElement('li')
       let itemTitle = document.createElement('h2')
       let itemInfo = document.createElement('p')
+      let itemContainer = document.createElement('div')
+
+      itemTitle.setAttribute('class', 'item-title')
+      itemInfo.setAttribute('class', 'item-meta')
+      itemContainer.setAttribute('class', 'item-container')
 
       item.setAttribute('id', `item-${index}`)
+      item.setAttribute('class', 'item')
       item.setAttribute('data-selected', false)
 
-      itemTitle.innerText = recipe.name
-      item.appendChild(itemTitle)
+      itemTitle.innerHTML = recipe.name
+      itemContainer.appendChild(itemTitle)
 
-      itemInfo.innerText = `Type: ${recipe.type} - Cook time: ${recipe.cook_time}`
-      item.appendChild(itemInfo)
+      itemInfo.innerHTML = `Type: ${recipe.type} <span>Cook time: ${
+        recipe.cook_time
+      }</span>`
+      itemContainer.appendChild(itemInfo)
+
+      item.appendChild(itemContainer)
 
       list.appendChild(item)
     }
@@ -49,8 +61,14 @@ class App {
   async handleClickedItem (e) {
     let parentId
 
-    if (e.target.nodeName === 'H2' || e.target.nodeName === 'P') {
-      parentId = e.srcElement.parentElement.id
+    if (
+      e.target.nodeName === 'H2' ||
+      e.target.nodeName === 'P' ||
+      e.target.nodeName === 'DIV'
+    ) {
+      parentId = e.srcElement.parentElement.parentElement.id
+    } else if (e.target.nodeName === 'SPAN') {
+      parentId = e.srcElement.parentElement.parentElement.parentElement.id
     } else if (e.target.nodeName === 'LI') {
       parentId = e.srcElement.id
     }
@@ -67,8 +85,6 @@ class App {
         newStatus = false
         this.deselectRecipe(recipeId)
       }
-
-      console.log(this.selectedRecipes)
 
       selectedItem.setAttribute('data-selected', newStatus)
     }
@@ -110,11 +126,13 @@ class App {
     for (let ingredient of this.ingredients) {
       let item = document.createElement('li')
 
+      item.setAttribute('class', 'ingredient')
       item.innerText = ingredient
       list.appendChild(item)
     }
 
     this.ingredientsListContainer.appendChild(list)
+    this.ingredientsCounter.innerHTML = `(${this.ingredients.length})`
   }
 
   removeIngredientsList () {

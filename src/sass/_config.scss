@@ -1,0 +1,56 @@
+// screen resolutions
+$media-desktop: 900px;
+
+// default margin & padding
+$default-margin: 1rem;
+$default-padding: 1.4rem;
+
+// fonts
+$font-family-base: 'Montserrat', sans-serif;
+$font-family-special: 'Raleway', sans-serif;
+
+// colors
+$akaroa: #d0caa1;
+$anzak: #e2be55;
+$alabaster: #fafafa;
+$black: #000;
+$chalky: #f2dc9c;
+$pearl-bush: #f2ece4;
+$mantis: #89bf67;
+$rob-roy: #e7c972;
+$ship-grey: #3f3c4b;
+$tundora: #444;
+$vanilla: #d6c7b3;
+$west-side: #fd8619;
+
+// default elements
+$color-page-title: $alabaster;
+
+// body
+$color-body-default: $tundora;
+$background-body-default: $alabaster;
+
+// header
+$background-header: $ship-grey;
+
+// recipes list
+$background-list-hover: $pearl-bush;
+$color-list-hover: $black;
+$background-list-selected: $pearl-bush;
+$color-list-selected: $black;
+$border-color-list-item: $pearl-bush;
+$border-color-list-selected: $vanilla;
+
+// ingredients
+$background-ingredients: $rob-roy;
+$background-section-title: $west-side;
+$background-ingredient-hover: $chalky;
+$color-ingredient-icon: $pearl-bush;
+$color-ingredient-header: $pearl-bush;
+$color-ingredient-hover: $black;
+$border-color-ingredient-list: $anzak;
+
+// footer
+$background-footer: $ship-grey;
+$color-footer: $alabaster;
+$color-link-footer: $rob-roy;

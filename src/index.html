@@ -11,15 +11,51 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Recipes App - PayByPhone's Frontend Code Test</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!-- <link rel="manifest" href="manifest.json" /> -->
   </head>
   <body>
     <div class="container">
-      <h1>Recipes List</h1>
+      <header class="app-header">
+        <i class="material-icons icon-header">
+          restaurant
+        </i>
+        <h1 class="page-title">Recipes <span>List</span></h1>
+      </header>
 
-      <section class="ingredients"></section>
+      <section class="content" role="main">
+        <section class="recipes"></section>
 
-      <section class="recipes"></section>
+        <section class="ingredients">
+          <div class="section-header">
+            <i class="material-icons icon-header-ingredients md-inactive">receipt</i>
+            <h3 class="section-title">Ingredients</h3>
+            <span class="ingredients-counter">(0)</span>
+          </div>
+        </section>
+      </section>
+
+      <footer class="app-footer">
+        <i class="material-icons icon-footer">info</i>
+        <p>
+          PayByPhone's Frontend Code Test
+          <br />
+          Developed by
+          <a href="https://github.com/gustavocardoso" target="_blank">Gustavo Cardoso</a>
+          <br />
+          Repository:
+          <a href="https://github.com/gustavocardoso/frontend-test" target="_blank"
+            >https://github.com/gustavocardoso/frontend-test</a
+          >
+        </p>
+      </footer>
     </div>
   </body>
 </html>
