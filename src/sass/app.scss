@@ -111,8 +111,13 @@ ul {
 
     .ingredient {
       font-size: 1rem;
+      color: $color-ingredient-bullet;
       padding: ($default-padding / 2);
       border-bottom: 1px solid $border-color-ingredient-list;
+
+      span {
+        color: $color-ingredient-text;
+      }
 
       &:hover {
         color: $color-ingredient-hover;

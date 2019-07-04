@@ -127,7 +127,7 @@ class App {
       let item = document.createElement('li')
 
       item.setAttribute('class', 'ingredient')
-      item.innerText = ingredient
+      item.innerHTML = `<span>${ingredient}</span>`
       list.appendChild(item)
     }
 
