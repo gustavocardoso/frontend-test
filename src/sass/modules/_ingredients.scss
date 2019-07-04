@@ -1,0 +1,54 @@
+.ingredients {
+  width: 55%;
+  background: $background-ingredients;
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    background: $background-section-title;
+    padding: ($default-padding / 2) $default-padding;
+
+    .icon-header-ingredients {
+      color: $color-ingredient-icon;
+      margin-right: ($default-margin / 2);
+    }
+
+    .section-title {
+      color: $color-ingredient-header;
+    }
+
+    .ingredients-counter {
+      display: inline-block;
+      color: $color-ingredient-header;
+      margin-left: ($default-margin / 2);
+    }
+  }
+
+  .how-to {
+    font-size: 0.9rem;
+    margin: ($default-margin * 1.5);
+    margin-bottom: 0;
+  }
+
+  .ingredients-list {
+    list-style-type: square;
+    list-style-position: inside;
+    padding: $default-padding;
+
+    .ingredient {
+      font-size: 1rem;
+      color: $color-ingredient-bullet;
+      padding: ($default-padding / 2);
+      border-bottom: 1px solid $border-color-ingredient-list;
+
+      span {
+        color: $color-ingredient-text;
+      }
+
+      &:hover {
+        color: $color-ingredient-hover;
+        background: $background-ingredient-hover;
+      }
+    }
+  }
+}

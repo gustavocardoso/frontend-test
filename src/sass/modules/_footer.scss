@@ -1,0 +1,17 @@
+.app-footer {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: $color-footer;
+  background: $background-footer;
+  padding: $default-padding;
+
+  a {
+    color: $color-link-footer;
+  }
+
+  .icon-footer {
+    font-size: 2rem;
+    margin-right: ($default-margin / 2);
+  }
+}

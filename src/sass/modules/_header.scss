@@ -1,0 +1,24 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  background: $background-header;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  padding: $default-padding;
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $color-page-title;
+    letter-spacing: -1px;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .icon-header {
+    font-size: 2rem;
+    color: #fd8619;
+    margin-right: ($default-margin / 2);
+  }
+}
