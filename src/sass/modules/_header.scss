@@ -5,6 +5,10 @@
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
   padding: $default-padding;
 
+  @media (min-width: $media-desktop) {
+    padding: $default-padding ($default-padding * 2);
+  }
+
   .page-title {
     font-size: 2rem;
     font-weight: 800;

@@ -6,10 +6,15 @@
   .item {
     display: flex;
     align-items: center;
+    font-size: 1rem;
     background: transparent;
     border-bottom: 1px solid $border-color-list-item;
     padding: $default-padding;
     cursor: pointer;
+
+    @media (min-width: $media-desktop) {
+      padding: $default-padding ($default-padding * 2);
+    }
 
     &:hover {
       color: $color-list-hover;
@@ -42,13 +47,31 @@
 
     .item-title {
       font-size: 1rem;
+
+      @media (min-width: $media-desktop) {
+        font-size: 1.4rem;
+      }
     }
 
     .item-meta {
       font-size: 0.8rem;
 
+      @media (min-width: $media-desktop) {
+        font-size: 1rem;
+      }
+
       span {
         display: block;
+
+        @media (min-width: $media-desktop) {
+          display: inline-block;
+
+          &:before {
+            display: inline-block;
+            content: '-';
+            margin-right: ($default-margin / 3);
+          }
+        }
       }
     }
   }

@@ -28,6 +28,10 @@
     font-size: 0.9rem;
     margin: ($default-margin * 1.5);
     margin-bottom: 0;
+
+    @media (min-width: $media-desktop) {
+      font-size: 1.2rem;
+    }
   }
 
   .ingredients-list {
@@ -35,11 +39,26 @@
     list-style-position: inside;
     padding: $default-padding;
 
+    @media (min-width: $media-desktop) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      flex-flow: row wrap;
+      align-content: flex-start;
+    }
+
     .ingredient {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: $color-ingredient-bullet;
       padding: ($default-padding / 2);
       border-bottom: 1px solid $border-color-ingredient-list;
+
+      @media (min-width: $media-desktop) {
+        width: 45%;
+        font-size: 1.2rem;
+      }
 
       span {
         color: $color-ingredient-text;
