@@ -119,24 +119,26 @@ class App {
   showIngredientsList () {
     this.removeIngredientsList()
 
-    let list = document.createElement('ul')
-    list.setAttribute('id', 'ingredients')
-    list.setAttribute('class', 'ingredients-list')
+    if (this.ingredients.length > 0) {
+      let list = document.createElement('ul')
+      list.setAttribute('id', 'ingredients')
+      list.setAttribute('class', 'ingredients-list')
 
-    for (let ingredient of this.ingredients) {
-      let item = document.createElement('li')
+      for (let ingredient of this.ingredients) {
+        let item = document.createElement('li')
 
-      item.setAttribute('class', 'ingredient')
-      item.innerHTML = `<span>${ingredient}</span>`
-      list.appendChild(item)
+        item.setAttribute('class', 'ingredient')
+        item.innerHTML = `<span>${ingredient}</span>`
+        list.appendChild(item)
+      }
+
+      this.ingredientsListContainer.appendChild(list)
+      this.ingredientsCounter.innerHTML = `(${this.ingredients.length})`
     }
-
-    this.ingredientsListContainer.appendChild(list)
-    this.ingredientsCounter.innerHTML = `(${this.ingredients.length})`
   }
 
   removeIngredientsList () {
-    const list = document.querySelector('#ingredients')
+    const list = document.querySelector('.ingredients-list')
 
     if (list !== null) {
       list.remove()
