@@ -12,3 +12,17 @@ You can run it in development mode with `yarn run dev`
 ## Build
 
 You can build the project by running `yarn run build` (files will be placed on dist/ folder). To see built project, just run `yarn run app` and point your browser to **http://localhost:8080**
+
+## E2E Tests
+
+To run E2E tests, just run the `yarn cypress:open` command.
+
+## Demo
+
+You can see a demo here: [https://app-recipes.netlify.com/](https://app-recipes.netlify.com/)
+
+## Contact
+
+[gustavocardoso@gmail.com](mailto://gustavocardoso@gmail.com)
+
+**:)**
