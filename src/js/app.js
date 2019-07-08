@@ -4,22 +4,21 @@ class App {
   constructor () {
     this.recipes = []
     this.selectedRecipes = []
-    this.ingredients = []
     this.ingredientsListContainer = document.querySelector('.ingredients')
-    this.recipesListContainer = document.querySelector('.recipes')
     this.ingredientsCounter = document.querySelector('.ingredients-counter')
+    this.recipesListContainer = document.querySelector('.recipes')
   }
 
   async init () {
     this.recipes = await Recipes.getRecipes()
-    this.createList()
+    this.createList(this.recipes)
   }
 
-  createList () {
+  createList (recipes) {
     let list = document.createElement('ul')
     list.setAttribute('class', 'recipes-list')
 
-    for (let [index, recipe] of this.recipes.entries()) {
+    for (let [index, recipe] of recipes.entries()) {
       let item = document.createElement('li')
       let itemTitle = document.createElement('h2')
       let itemInfo = document.createElement('p')
@@ -104,27 +103,30 @@ class App {
     }
   }
 
-  async generateIngredientsList () {
-    this.ingredients = []
+  generateIngredientsList () {
+    let ingredients = []
 
     this.selectedRecipes.forEach(id => {
       let recipeIngredients = this.recipes[id].ingredients
-      this.ingredients = [...this.ingredients, ...recipeIngredients].sort()
-      this.ingredients = [...new Set(this.ingredients)]
+
+      ingredients = [...ingredients, ...recipeIngredients].sort()
+      ingredients = [...new Set(ingredients)]
     })
 
-    this.showIngredientsList()
+    this.showIngredientsList(ingredients)
   }
 
-  showIngredientsList () {
-    this.removeIngredientsList()
+  showIngredientsList (ingredients) {
+    const list = document.querySelector('.ingredients-list')
 
-    if (this.ingredients.length > 0) {
+    this.removeIngredientsList(list)
+
+    if (ingredients.length > 0) {
       let list = document.createElement('ul')
       list.setAttribute('id', 'ingredients')
       list.setAttribute('class', 'ingredients-list')
 
-      for (let ingredient of this.ingredients) {
+      for (let ingredient of ingredients) {
         let item = document.createElement('li')
 
         item.setAttribute('class', 'ingredient')
@@ -133,13 +135,11 @@ class App {
       }
 
       this.ingredientsListContainer.appendChild(list)
-      this.ingredientsCounter.innerHTML = `(${this.ingredients.length})`
+      this.ingredientsCounter.innerHTML = `(${ingredients.length})`
     }
   }
 
-  removeIngredientsList () {
-    const list = document.querySelector('.ingredients-list')
-
+  removeIngredientsList (list) {
     if (list !== null) {
       list.remove()
     }
