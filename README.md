@@ -2,7 +2,7 @@
 
 This is an at-home exercise used as part of standard PayByPhone's interview process for frontend and full-stack developers.
 
-<img src="https://raw.githubusercontent.com/gustavocardoso/frontend-test/readme/screenshot.png" width="200" />
+<img src="https://raw.githubusercontent.com/gustavocardoso/frontend-test/readme/screenshot.png?v=2" width="200" />
 
 ## Installing and running
 
