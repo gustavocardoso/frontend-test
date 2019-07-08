@@ -1,21 +1,28 @@
-<h1>PayByPhone's Frontend Code Test</h1>
-<p>This is an at-home exercise that we use as part of our standard interview process for frontend and full-stack developers.</p>
+# Frontend Code Test
 
-<h2>Instructions</h2>
+This is an at-home exercise used as part of standard PayByPhone's interview process for frontend and full-stack developers.
 
-<ul>
-    <li>Clone this repo</li>
-    <li>Complete the exercise and submit either a zip of the solution or a link to a new repo</li>
-    <li>You may use any resources, frameworks, libraries, etc and style the markup however you like.</li>
-</ul>
+<img src="https://raw.githubusercontent.com/gustavocardoso/frontend-test/readme/screenshot.png?v=2" width="1000" />
 
-<h2>Requirements</h2>
+## Installing and running
 
-<p>Using the provided JSON data representing a collection of meal recipes, create a micro frontend application that meets the following criteria:</p>
+Just clone the project and install all the dependencies with `yarn install`.
+You can run it in development mode with `yarn run dev`
 
-<ul>
-    <li>Display a list (or table) of recipes from the provided JSON.</li>
-    <li>Allow selection of multiple recipes.</li>
-    <li>Show an alphabetically ordered list of distinct ingredients for the selected recipes. This should update as recipes are selected / unselected.</li>
-    <li>In a README note any required setup to be able to run the app, such as modifying hosts file, npm install, etc.</li>
-</ul>
+## Build
+
+You can build the project by running `yarn run build` (files will be placed on dist/ folder). To see built project, just run `yarn run app` and point your browser to **http://localhost:8080**
+
+## E2E Tests
+
+To run E2E tests, just run the `yarn cypress:open` command.
+
+## Demo
+
+You can see a demo here: [https://app-recipes.netlify.com/](https://app-recipes.netlify.com/)
+
+## Contact
+
+[gustavocardoso@gmail.com](mailto://gustavocardoso@gmail.com)
+
+**:)**
