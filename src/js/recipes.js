@@ -5,11 +5,6 @@ class Recipes {
 
     return recipes
   }
-
-  async getRecipeIngredients (recipeIndex) {
-    const recipes = await this.getRecipes()
-    return recipes[recipeIndex].ingredients
-  }
 }
 
 export default new Recipes()
